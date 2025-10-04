@@ -34,7 +34,18 @@ class MyStyleToolDialog(QtWidgets.QDialog):
 
 		self.nameLayout = QtWidgets.QHBoxLayout()
 		self.mainLayout.addLayout(self.nameLayout)
+
+		self.nameIconLabel = QtWidgets.QLabel()
+		self.nameIconPixmap = QtGui.QPixmap(f"{ROOT_RESOURCE_DIR}/Icons/cube.png")
+		cube_scaled_pixmap = self.nameIconPixmap.scaled(
+			QtCore.QSize(16,16),
+			QtCore.Qt.KeepAspectRatio,
+			QtCore.Qt.SmoothTransformation
+		)
+
+		self.nameIconLabel.setPixmap(cube_scaled_pixmap)
 		self.nameLabel = QtWidgets.QLabel("Name :")
+
 		self.nameLabel.setStyleSheet(
 			'''
 			QLabel {
