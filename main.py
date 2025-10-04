@@ -14,7 +14,6 @@ class MyStyleToolDialog(QtWidgets.QDialog):
 		super().__init__(parent)
 
 		self.setWindowTitle("My Tool UI")
-
 		self.resize(300,80)
 
 		self.mainLayout = QtWidgets.QVBoxLayout()
@@ -36,7 +35,28 @@ class MyStyleToolDialog(QtWidgets.QDialog):
 		self.nameLayout = QtWidgets.QHBoxLayout()
 		self.mainLayout.addLayout(self.nameLayout)
 		self.nameLabel = QtWidgets.QLabel("Name :")
+		self.nameLabel.setStyleSheet(
+			'''
+			QLabel {
+				color: #593939;
+				font-family: Comic Sans MS;
+				font-size: 14px;
+				font-weight: bold;
+			}
+			'''
+		)
 		self.nameLineEdit = QtWidgets.QLineEdit()
+		self.nameLineEdit.setStyleSheet(
+			'''
+			QLineEdit {
+				border: 1px solid #BF5E5E;
+				border-radius: 10px;
+				color: #BF5E5E;
+				font-family: Comic Sans MS;
+				font-size: 12px;
+			}
+			'''
+		)
 		self.nameLayout.addWidget(self.nameLabel)
 		self.nameLayout.addWidget(self.nameLineEdit)
 		
