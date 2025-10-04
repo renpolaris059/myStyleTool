@@ -44,8 +44,10 @@ class MyStyleToolDialog(QtWidgets.QDialog):
 		)
 
 		self.nameIconLabel.setPixmap(cube_scaled_pixmap)
-		self.nameLabel = QtWidgets.QLabel("Name :")
+		
+		self.nameLayout.addWidget(self.nameIconLabel)
 
+		self.nameLabel = QtWidgets.QLabel("Name :")
 		self.nameLabel.setStyleSheet(
 			'''
 			QLabel {
@@ -56,6 +58,8 @@ class MyStyleToolDialog(QtWidgets.QDialog):
 			}
 			'''
 		)
+		
+
 		self.nameLineEdit = QtWidgets.QLineEdit()
 		self.nameLineEdit.setStyleSheet(
 			'''
